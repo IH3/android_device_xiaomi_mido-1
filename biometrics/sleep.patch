@@ -1,0 +1,13 @@
+diff -ruN --exclude .git a/goodix/BiometricsFingerprint.cpp b/biometrics/BiometricsFingerprint.cpp
+--- a/goodix/BiometricsFingerprint.cpp	2017-11-29 19:59:47.929211863 +0300
++++ b/biometrics/BiometricsFingerprint.cpp	2017-12-05 21:34:46.264187467 +0300
+@@ -182,6 +182,9 @@
+ }
+ 
+ Return<uint64_t> BiometricsFingerprint::getAuthenticatorId() {
++    ALOGE("========== getAuthenticatorId before sleep ==========");
++    usleep(200000);
++    ALOGE("========== getAuthenticatorId after sleep  ==========");
+     return mDevice->get_authenticator_id(mDevice);
+ }
+ 
